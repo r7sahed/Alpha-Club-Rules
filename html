@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শর্তাবলী এবং নিয়ম - Alpha Club</title>
+    
+    <style>
+        /* মূল স্টাইল এবং গাঢ় ব্যাকগ্রাউন্ড */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #0d111c; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
+            color: #ffffff; /* সাদা টেক্সট */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 50px; 
+        }
+
+        /* শিরোনাম স্টাইল */
+        .main-title {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 50px; 
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            color: #a0a0a0; 
+            margin-bottom: 30px;
+        }
+
+        /* হেডার বার (লোগো এবং ভাষা বাটন) */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0d111c; 
+            border-bottom: 1px solid #1e263a; 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .logo {
+            width: 30px; 
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 6px;
+        }
+        
+        /* === সংশোধিত অংশ: Alpha Club নাম বড় করা হয়েছে === */
+        .app-name {
+            font-weight: bold;
+            font-size: 18px; /* ফন্ট সাইজ বড় করা হয়েছে */
+            margin-right: 15px;
+        }
+        /* ================================================= */
+
+        .page-title-header {
+            color: #a0a0a0;
+        }
+
+        /* === সংশোধিত অংশ: ভাষা বাটন স্টাইল ঠিক করা হয়েছে === */
+        .lang-button {
+            background-color: #007bff; /* নীল ব্যাকগ্রাউন্ড */
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            /* বাটন যাতে নিশ্চিতভাবে হেডার বারে থাকে, তার জন্য কোনো ফ্লোটিং স্টাইল সরানো হয়েছে */
+        }
+
+        .lang-button:hover {
+            background-color: #0056b3;
+        }
+        /* ================================================= */
+
+        /* শর্তাবলীর কার্ড স্টাইল */
+        .card {
+            background-color: #1e263a; 
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #007bff; 
+        }
+
+        .card-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff; 
+            margin-bottom: 5px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #cccccc; 
+            margin-bottom: 0;
+        }
+
+        /* ছোট পর্দার জন্য পরিবর্তন (মোবাইল) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                padding-bottom: 40px;
+            }
+            .main-title {
+                font-size: 24px;
+                margin-top: 70px;
+            }
+            .card {
+                padding: 15px;
+            }
+            .header-bar {
+                /* বাটনটি ডানদিকে রাখতে, এই স্টাইলটি রাখা হচ্ছে: */
+                flex-direction: row; 
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+            }
+            .lang-button {
+                /* ছোট স্ক্রিনেও ঠিকভাবে দেখানোর জন্য */
+                align-self: auto;
+                margin-top: 0;
+            }
+            .page-title-header {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="logo-container">
+            <img src="https://img.sanishtech.com/u/50e48ca0558bf6e40565309b62ebd571.jpg" alt="Alpha Club Logo" class="logo">
+            <div class="app-name">Alpha Club</div>
+            <div class="page-title-header" id="pageTitleHeader">Terms and Conditions</div>
+        </div>
+        
+        <button class="lang-button" onclick="toggleLanguage()" id="langButton">Read in English</button>
+    </div>
+
+    <div class="container">
+        <h1 class="main-title" id="mainTitle">শর্তাবলী এবং নিয়ম</h1>
+        <h2 class="subtitle" id="subtitle">Alpha Club ব্যবহারের শর্তাবলী</h2>
+
+        <div class="card">
+            <div class="card-number">১.</div>
+            <h3 class="card-title" id="cardTitle1">শর্তাবলী গ্রহণ</h3>
+            <p id="cardText1">Alpha Club অ্যাক্সেস বা ব্যবহার করার মাধ্যমে, আপনি এই শর্তাবলী এবং আমাদের গোপনীয়তা নীতি দ্বারা আবদ্ধ হতে সম্মত হন।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">২.</div>
+            <h3 class="card-title" id="cardTitle2">বয়সের প্রয়োজনীয়তা</h3>
+            <p id="cardText2">আমাদের অ্যাপে খেলা বা জুয়া কার্যক্রমে অংশগ্রহণ করতে আপনার বয়স কমপক্ষে **১৮ বছর** হতে হবে।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৩.</div>
+            <h3 class="card-title" id="cardTitle3">জুয়া নিয়ন্ত্রণ</h3>
+            <p id="cardText3">অ্যাপটি এমন বিচারব্যবস্থায় আইনি জুয়া পরিষেবা প্রদান করে যেখানে এই ধরনের কার্যক্রম অনুমোদিত। অনলাইন জুয়া সম্পর্কে আপনার স্থানীয় এলাকার আইন মেনে চলার দায়িত্ব আপনার।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৪.</div>
+            <h3 class="card-title" id="cardTitle4">অ্যাকাউন্ট এবং নিরাপত্তা</h3>
+            <p id="cardText4">আমাদের অ্যাপ ব্যবহার করতে, আপনাকে একটি অ্যাকাউন্ট তৈরি করতে হবে। আপনি সঠিক তথ্য প্রদান করতে এবং আপনার অ্যাকাউন্টের বিবরণীর নিরাপত্তা বজায় রাখতে সম্মত হন।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৫.</div>
+            <h3 class="card-title" id="cardTitle5">নিষিদ্ধ কার্যক্রম</h3>
+            <p id="cardText5">আপনি কোনও প্রতারণামূলক বা অবৈধ কার্যক্রমে জড়িত হতে সম্মত হন না, যার মধ্যে রয়েছে প্রতারণা, অ্যাকাউন্ট শেয়ারিং, বা অ্যাপের বৈশিষ্ট্যগুলি নিপুণ করা।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৬.</div>
+            <h3 class="card-title" id="cardTitle6">সমাপ্তি</h3>
+            <p id="cardText6">আপনি যদি এই শর্তাবলী লঙ্ঘন করেন বা অনুপযুক্ত আচরণ করেন তবে আমরা আপনার অ্যাপ অ্যাক্সেস স্থগিত বা সমাপ্ত করতে পারি।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৭.</div>
+            <h3 class="card-title" id="cardTitle7">দায়বদ্ধতা অস্বীকার এবং সীমাবদ্ধতা</h3>
+            <p id="cardText7">**Alpha Club** অ্যাপ ব্যবহারের ফলে আপনার যে কোনো ক্ষতি, ক্ষয়ক্ষতি বা আইনি সমস্যার জন্য দায়ী নয়, যার মধ্যে জুয়া জনিত ক্ষতি অন্তর্ভুক্ত।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৮.</div>
+            <h3 class="card-title" id="cardTitle8">শাসন আইন</h3>
+            <p id="cardText8">এই শর্তাবলী অ্যাপ যে বিচারব্যবস্থায় পরিচালিত হয় সেই বিচারব্যবস্থার আইন দ্বারা পরিচালিত।</p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">৯.</div>
+            <h3 class="card-title" id="cardTitle9">শর্তাবলীতে পরিবর্তন</h3>
+            <p id="cardText9">আমরা যে কোনো সময় এই শর্তাবলী পরিবর্তন করার অধিকার সংরক্ষণ করি। যে কোনো পরিবর্তন এই পেজে পোস্ট করা হবে।</p>
+        </div>
+        
+    </div>
+    
+    <script>
+        // শর্তাবলীর বাংলা এবং ইংরেজি কন্টেন্ট
+        const content = {
+            bn: {
+                mainTitle: "শর্তাবলী এবং নিয়ম",
+                subtitle: "Alpha Club ব্যবহারের শর্তাবলী",
+                headerTitle: "Terms and Conditions",
+                button: "Read in English",
+                card: [
+                    { title: "শর্তাবলী গ্রহণ", text: "Alpha Club অ্যাক্সেস বা ব্যবহার করার মাধ্যমে, আপনি এই শর্তাবলী এবং আমাদের গোপনীয়তা নীতি দ্বারা আবদ্ধ হতে সম্মত হন।" },
+                    { title: "বয়সের প্রয়োজনীয়তা", text: "আমাদের অ্যাপে খেলা বা জুয়া কার্যক্রমে অংশগ্রহণ করতে আপনার বয়স কমপক্ষে **১৮ বছর** হতে হবে।" },
+                    { title: "জুয়া নিয়ন্ত্রণ", text: "অ্যাপটি এমন বিচারব্যবস্থায় আইনি জুয়া পরিষেবা প্রদান করে যেখানে এই ধরনের কার্যক্রম অনুমোদিত। অনলাইন জুয়া সম্পর্কে আপনার স্থানীয় এলাকার আইন মেনে চলার দায়িত্ব আপনার।" },
+                    { title: "অ্যাকাউন্ট এবং নিরাপত্তা", text: "আমাদের অ্যাপ ব্যবহার করতে, আপনাকে একটি অ্যাকাউন্ট তৈরি করতে হবে। আপনি সঠিক তথ্য প্রদান করতে এবং আপনার অ্যাকাউন্টের বিবরণীর নিরাপত্তা বজায় রাখতে সম্মত হন।" },
+                    { title: "নিষিদ্ধ কার্যক্রম", text: "আপনি কোনও প্রতারণামূলক বা অবৈধ কার্যক্রমে জড়িত হতে সম্মত হন না, যার মধ্যে রয়েছে প্রতারণা, অ্যাকাউন্ট শেয়ারিং, বা অ্যাপের বৈশিষ্ট্যগুলি নিপুণ করা।" },
+                    { title: "সমাপ্তি", text: "আপনি যদি এই শর্তাবলী লঙ্ঘন করেন বা অনুপযুক্ত আচরণ করেন তবে আমরা আপনার অ্যাপ অ্যাক্সেস স্থগিত বা সমাপ্ত করতে পারি।" },
+                    { title: "দায়বদ্ধতা অস্বীকার এবং সীমাবদ্ধতা", text: "**Alpha Club** অ্যাপ ব্যবহারের ফলে আপনার যে কোনো ক্ষতি, ক্ষয়ক্ষতি বা আইনি সমস্যার জন্য দায়ী নয়, যার মধ্যে জুয়া জনিত ক্ষতি অন্তর্ভুক্ত।" },
+                    { title: "শাসন আইন", text: "এই শর্তাবলী অ্যাপ যে বিচারব্যবস্থায় পরিচালিত হয় সেই বিচারব্যবস্থার আইন দ্বারা পরিচালিত।" },
+                    { title: "শর্তাবলীতে পরিবর্তন", text: "আমরা যে কোনো সময় এই শর্তাবলী পরিবর্তন করার অধিকার সংরক্ষণ করি। যে কোনো পরিবর্তন এই পেজে পোস্ট করা হবে।" }
+                ]
+            },
+            en: {
+                mainTitle: "Terms and Conditions",
+                subtitle: "Terms of Use for Alpha Club",
+                headerTitle: "Terms and Conditions",
+                button: "বাংলায় পড়ুন",
+                card: [
+                    { title: "Acceptance of Terms", text: "By accessing or using Alpha Club, you agree to be bound by these Terms and Conditions and our Privacy Policy." },
+                    { title: "Age Requirement", text: "You must be at least **18 years old** to participate in gaming or gambling activities on our app." },
+                    { title: "Gambling Regulation", text: "The app provides legal gambling services in jurisdictions where such activities are permitted. It is your responsibility to comply with local laws regarding online gambling." },
+                    { title: "Account and Security", text: "To use our app, you must create an account. You agree to provide accurate information and maintain the security of your account details." },
+                    { title: "Prohibited Activities", text: "You agree not to engage in any fraudulent or illegal activity, including cheating, account sharing, or manipulating app features." },
+                    { title: "Termination", text: "We may suspend or terminate your access to the app if you violate these Terms or engage in inappropriate conduct." },
+                    { title: "Disclaimer and Limitation of Liability", text: "**Alpha Club** is not liable for any loss, damage, or legal issues resulting from your use of the app, including gambling-related losses." },
+                    { title: "Governing Law", text: "These Terms are governed by the laws of the jurisdiction in which the app operates." },
+                    { title: "Changes to Terms", text: "We reserve the right to change these Terms and Conditions at any time. Any changes will be posted on this page." }
+                ]
+            }
+        };
+
+        // বর্তমান ভাষা ট্র্যাক করার জন্য ভেরিয়েবল
+        let currentLang = 'bn'; 
+
+        function updateContent(lang) {
+            const currentContent = content[lang];
+            
+            // প্রধান শিরোনামগুলি আপডেট করা
+            document.getElementById('mainTitle').textContent = currentContent.mainTitle;
+            document.getElementById('subtitle').textContent = currentContent.subtitle;
+            document.getElementById('pageTitleHeader').textContent = currentContent.headerTitle;
+            document.getElementById('langButton').textContent = currentContent.button;
+
+            // কার্ডের কন্টেন্ট আপডেট করা
+            currentContent.card.forEach((item, index) => {
+                const titleElement = document.getElementById(`cardTitle${index + 1}`);
+                const textElement = document.getElementById(`cardText${index + 1}`);
+                
+                if (titleElement) titleElement.textContent = item.title;
+                if (textElement) {
+                    // HTML কনটেন্ট সাপোর্ট করার জন্য innerHTML ব্যবহার করা হচ্ছে (যেমন: **18 বছর**)
+                    textElement.innerHTML = item.text; 
+                }
+            });
+            
+            // HTML lang অ্যাট্রিবিউট আপডেট করা
+            document.documentElement.lang = lang;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'bn' ? 'en' : 'bn';
+            updateContent(currentLang);
+        }
+
+        // পেজ লোড হওয়ার সময় ডিফল্ট ভাষা সেট করা
+        window.onload = function() {
+            updateContent(currentLang);
+        };
+    </script>
+</body>
+</html>
